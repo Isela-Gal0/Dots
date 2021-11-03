@@ -1,0 +1,96 @@
+:root{
+    ---bg:   #001300;
+    --green: #0af512;
+}
+
+
+*{
+    margin:     0;
+    padding:    0;
+    box-sizing: border-box;
+}
+
+body{
+    width:  auto;
+    height: auto;
+}
+
+
+.container{
+    position:        absolute;
+    width:           auto;
+    height:          auto;
+    display:         flex;
+    justify-content: center;
+    align-items:     center;
+    flex-wrap:       wrap;
+    background:      #001300;
+    overflow:        hidden;
+    animation: animateColor 10s linear infinite;
+}
+
+@keyframes animateColor{
+    0% {
+
+        filter: hue-rotate(0deg);
+    }
+
+    25% {
+
+        filter: hue-rotate(90deg);
+    }
+
+    50% {
+
+        filter: hue-rotate(180deg);
+    }
+
+    100% {
+
+        filter: hue-rotate(360deg);
+    }
+}
+
+.container span{
+    width:           200px;
+    height:          200px;
+    position:        relative;
+    display:         block;
+    background-color: rgba(3,3,3,0.034);
+}
+
+
+.container span::before{
+    width:       100%;
+    height:      100%;
+    position:    absolute;
+    content:     '';
+    top:         0;
+    left:        0;
+    background:           #0af512;
+    box-shadow: 0 0 10px  #0af512,
+                0 0 20px  #0af512,
+                0 0 30px  #0af512,
+                0 0 40px  #0af512,
+                0 0 50px  #0af512,
+                0 0 60px  #0af512,
+                0 0 80px  #0af512,
+                0 0 100px #0af512;
+    border-radius: 50%;
+    transition:    0s;
+    transform:     scale(0);
+}
+
+.container span:hover::before{
+    transition: 0s;
+    transform: scale(1);
+}
+
+
+
+
+
+
+
+
+
